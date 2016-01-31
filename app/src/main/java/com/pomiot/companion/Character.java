@@ -12,6 +12,8 @@ public class Character implements Serializable {
 
     private String description;
 
+    private String profession;
+
     private List<Characteristic> attributeList;
 
     private List<Characteristic> skillList;
