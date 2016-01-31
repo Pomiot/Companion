@@ -56,17 +56,17 @@ Use FrameLayout.
 
             <TextView
                 style="@style/PrimaryText"
-                android:text="@string/attributes_label"
+                android:text="@string/characteristics_label"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <TextView
                 style="@style/SecondaryText"
-                android:id="@+id/attributes_content"
+                android:id="@+id/characteristics_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/attributes_text"
+                android:text="@string/characteristics_text"
                 android:layout_marginTop="10dp"/>
 
             <TextView
@@ -85,11 +85,12 @@ Use FrameLayout.
                 android:text="@string/skills_text"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="60dp"/>
+
             <TextView
                 style="@style/PrimaryText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/skills_label"
+                android:text="@string/perks_label"
                 android:textColor="#222"
                 android:layout_marginTop="10dp"/>
 

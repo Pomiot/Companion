@@ -1,4 +1,4 @@
-package com.pomiot.companion;
+package com.pomiot.companion.model;
 
 /**
  * Created by Tomasz on 31.01.2016.
