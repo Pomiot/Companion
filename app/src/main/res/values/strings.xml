@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Companion</string>
+    <string name="action_settings">Settings</string>
+    <string name="description_label">Description</string>
+    <string name="attributes_label">Attributes</string>
+    <string name="skills_label">Skills</string>
+    <string name="perks_label">Perks</string>
+    <string name="description_text">Conan miał żyć około 10 000 lat temu w owianej mgłami tajemnicy
+        erze hyboryjskiej. Urodził się w Cymerii, górzystej krainie zamieszkiwanej przez plemiona
+        barbarzyńców. Cymeryjczycy byli potomkami starożytnych Atlantydów. Jednak po zniszczeniu jej
+        wspaniałej cywilizacj przez kataklizm, ocaleli Atlantydzi nie zdołali odbudować cywilizacji
+        i cofnęli się cywilizacyjnie do epoki kamiennej.</string>
+    <string name="attributes_text">Strength 10 \nDexterity 7 \nToughness 10 \nIntelligence 3 \nCharisma 1</string>
+    <string name="skills_text">Killing 10 \nEating 10 \nMaths 4</string>
+    <string name="perks_text">Unkillable \nRage \nGood cook</string>
+    <string name="back_to_top">Back to top</string>
+</resources>

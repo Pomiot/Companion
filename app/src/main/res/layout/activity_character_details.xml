@@ -1,0 +1,115 @@
+<!--
+Exercise 1.
+
+Make "Scroll to top" button fixed at the bottom of the screen and visible at all times.
+Use FrameLayout.
+
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/character_title"
+                android:text="Andrzej the Barbarian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#222"/>
+
+            <ImageView
+                android:id="@+id/photo"
+                android:src="@drawable/recipe1"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+            <TextView
+                style="@style/PrimaryText"
+                android:text="@string/description_label"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                style="@style/SecondaryText"
+                android:id="@+id/description_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description_text"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                style="@style/PrimaryText"
+                android:text="@string/attributes_label"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                style="@style/SecondaryText"
+                android:id="@+id/attributes_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/attributes_text"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                style="@style/PrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skills_label"
+                android:textColor="#222"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                style="@style/SecondaryText"
+                android:id="@+id/skills_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skills_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="60dp"/>
+            <TextView
+                style="@style/PrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skills_label"
+                android:textColor="#222"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                style="@style/SecondaryText"
+                android:id="@+id/perks_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/perks_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="60dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/back_to_top"
+        android:id="@+id/button"/>
+
+</FrameLayout>
