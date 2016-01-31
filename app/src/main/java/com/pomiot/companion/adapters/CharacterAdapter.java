@@ -1,7 +1,6 @@
 package com.pomiot.companion.adapters;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pomiot.companion.R;
-import com.pomiot.companion.model.*;
 import com.pomiot.companion.model.Character;
+import com.pomiot.companion.repositories.CharacterDatabase;
 import com.pomiot.companion.repositories.CharacterRepository;
+import com.pomiot.companion.repositories.DummyCharacterRepository;
 
 /**
  * Created by Tomasz on 31.01.2016.
@@ -24,7 +24,7 @@ public class CharacterAdapter extends BaseAdapter {
 
     public CharacterAdapter(Context context) {
         this.context = context;
-        this.repository = new CharacterRepository(context);
+        this.repository = new CharacterDatabase(context);
     }
 
     @Override

@@ -15,9 +15,9 @@ public class Character implements Serializable {
     private String description;
     private String profession;
 
-    private List<Characteristic> attributeList;
-    private List<Characteristic> skillList;
-    private List<Characteristic> perksList;
+    private String attributeList;
+    private String skillList;
+    private String perksList;
 
     public int getPhotoResId() {
         return photoResId;
@@ -35,15 +35,15 @@ public class Character implements Serializable {
         return profession;
     }
 
-    public List<Characteristic> getAttributeList() {
+    public String getAttributeList() {
         return attributeList;
     }
 
-    public List<Characteristic> getSkillList() {
+    public String getSkillList() {
         return skillList;
     }
 
-    public List<Characteristic> getPerksList() {
+    public String getPerksList() {
         return perksList;
     }
 
@@ -53,23 +53,22 @@ public class Character implements Serializable {
         this.description = description;
         this.profession = profession;
 
-        attributeList = new ArrayList<>();
-        skillList = new ArrayList<>();
-        perksList = new ArrayList<>();
+        String atts = "Atrybut1 5\nAtrybut2 8\nAtrybut3 3\n";
+        String sklls = "Skill1 5\nSkill2 8\nSkill3 3\n";
+        String prks = "Perk1\nPerk2\nPerk3";
 
-        attributeList.add(new Characteristic("Atrybut1", "5"));
-        attributeList.add(new Characteristic("Atrybut2", "7"));
-        attributeList.add(new Characteristic("Atrybut3", "3"));
-
-        skillList.add(new Characteristic("Skill1", "2"));
-
-        skillList.add(new Characteristic("Skill2", "1"));
-        skillList.add(new Characteristic("Skill3", "4"));
-
-        perksList.add(new Characteristic("Perk", "1"));
-        perksList.add(new Characteristic("Perk", "2"));
-
+        attributeList = atts;
+        skillList = sklls;
+        perksList = prks;
     }
 
-
+    public Character(int photoResId, String characterName, String description, String profession, String attributeList, String skillList, String perksList) {
+        this.photoResId = photoResId;
+        this.characterName = characterName;
+        this.description = description;
+        this.profession = profession;
+        this.attributeList = attributeList;
+        this.skillList = skillList;
+        this.perksList = perksList;
+    }
 }

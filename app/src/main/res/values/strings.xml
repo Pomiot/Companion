@@ -14,4 +14,7 @@
     <string name="skills_text">Killing 10 \nEating 10 \nMaths 4</string>
     <string name="perks_text">Unkillable \nRage \nGood cook</string>
     <string name="back_to_top">Back to top</string>
+    <string name="character_name">Character name</string>
+    <string name="profession_label">Profession</string>
+    <string name="save_character_label">Save character</string>
 </resources>
