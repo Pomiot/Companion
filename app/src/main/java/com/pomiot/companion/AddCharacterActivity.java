@@ -16,7 +16,7 @@ public class AddCharacterActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.add_recipe);
+        setContentView(R.layout.add_character);
 
         setupViews();
     }
@@ -36,16 +36,16 @@ public class AddCharacterActivity extends AppCompatActivity {
                 String description = descriptionEditText.getText().toString();
                 String profession = professionEditText.getText().toString();
 
-                saveRecipe(new Character(R.drawable.recipe1, characterName, description, profession));
+                saveCharacter(new Character(R.drawable.recipe1, characterName, description, profession));
             }
         });
     }
 
-    private void saveRecipe(Character character) {
+    private void saveCharacter(Character character) {
         CharacterDatabase characterDatabase = new CharacterDatabase(this);
         characterDatabase.addCharacter(character);
 
-        Toast.makeText(this, "Recipe " + character.getCharacterName() + " saved", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Character " + character.getCharacterName() + " saved", Toast.LENGTH_SHORT).show();
 
         finish();
     }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,13 +18,15 @@ public class CharacterDetailsActivity extends AppCompatActivity {
 
     public static final String CHARACTER_EXTRA_KEY = "character";
 
+    Character character;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_details);
 
         Intent i = getIntent();
-        Character character = (Character) i.getExtras().getSerializable(CHARACTER_EXTRA_KEY);
+        character = (Character) i.getExtras().getSerializable(CHARACTER_EXTRA_KEY);
 
         showCharacter(character);
     }
@@ -43,5 +46,40 @@ public class CharacterDetailsActivity extends AppCompatActivity {
         characteristics.setText(character.getAttributeList().toString());
         skills.setText(character.getSkillList().toString());
         perks.setText(character.getPerksList().toString());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_character_details, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.modify_character: {
+                startModifyCharacterActivity();
+                return true;
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+            }
+        }
+
+    }
+
+    private void startModifyCharacterActivity() {
+        Intent intent = new Intent(this, ModifyCharacterActivity.class);
+        intent.putExtra(CHARACTER_EXTRA_KEY, character);
+        startActivity(intent);
     }
 }

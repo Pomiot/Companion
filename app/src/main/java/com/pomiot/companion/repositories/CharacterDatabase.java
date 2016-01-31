@@ -70,4 +70,20 @@ public class CharacterDatabase implements CharacterRepository {
 
         return (int) DatabaseUtils.queryNumEntries(db, TABLE_NAME, null, null);
     }
+
+    public void modifyCharacter(Character updatedCharacter){
+        SQLiteDatabase db = characterDbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, updatedCharacter.getCharacterName());
+        values.put(COLUMN_PROFESSION, updatedCharacter.getProfession());
+        values.put(COLUMN_DESCRIPTION, updatedCharacter.getDescription());
+        values.put(COLUMN_CHARACTERISTICS, updatedCharacter.getAttributeList());
+        values.put(COLUMN_SKILLS, updatedCharacter.getSkillList());
+        values.put(COLUMN_PERKS, updatedCharacter.getPerksList());
+        values.put(COLUMN_PHOTOID, updatedCharacter.getPhotoResId());
+
+        db.update(TABLE_NAME, values, COLUMN_NAME + " = '" + updatedCharacter.getCharacterName()+"'",null);
+
+    }
 }
