@@ -15,10 +15,14 @@ import com.pomiot.companion.model.Character;
 
 public class CharacterListActivity extends AppCompatActivity {
 
+    CharacterAdapter adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_list);
+
+        adapter = new CharacterAdapter(this);
 
         initializeCharactersList();
 
@@ -27,6 +31,12 @@ public class CharacterListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -62,8 +72,6 @@ public class CharacterListActivity extends AppCompatActivity {
     private void initializeCharactersList() {
 
         ListView listView = (ListView) findViewById(R.id.character_list);
-
-        final CharacterAdapter adapter = new CharacterAdapter(this);
 
         listView.setAdapter(adapter);
 

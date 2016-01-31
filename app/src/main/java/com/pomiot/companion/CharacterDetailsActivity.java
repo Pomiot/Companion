@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import com.pomiot.companion.model.*;
 import com.pomiot.companion.model.Character;
+import com.pomiot.companion.repositories.CharacterDatabase;
 
+import org.w3c.dom.CharacterData;
 import org.w3c.dom.Text;
 
 public class CharacterDetailsActivity extends AppCompatActivity {
@@ -70,11 +72,19 @@ public class CharacterDetailsActivity extends AppCompatActivity {
                 startModifyCharacterActivity();
                 return true;
             }
+            case R.id.remove_character: {
+                removeCharacter();
+            }
             default: {
                 return super.onOptionsItemSelected(item);
             }
         }
 
+    }
+
+    private void removeCharacter() {
+        CharacterDatabase db = new CharacterDatabase(this);
+        db.removeCharacter(this.character);
     }
 
     private void startModifyCharacterActivity() {

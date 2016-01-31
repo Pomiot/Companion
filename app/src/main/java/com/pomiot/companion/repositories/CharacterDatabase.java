@@ -86,4 +86,9 @@ public class CharacterDatabase implements CharacterRepository {
         db.update(TABLE_NAME, values, COLUMN_NAME + " = '" + updatedCharacter.getCharacterName()+"'",null);
 
     }
+
+    public void removeCharacter(Character character){
+        SQLiteDatabase db = characterDbHelper.getWritableDatabase();
+        db.delete(TABLE_NAME, COLUMN_NAME + " = '" + character.getCharacterName()+"'",null);
+    }
 }
